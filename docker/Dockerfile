@@ -1,12 +1,10 @@
-FROM ubuntu:18.04
+FROM node:latest
 
 WORKDIR /app
 EXPOSE 4200
 
 COPY . .
 
-RUN apt update && apt install -y npm
-#RUN cd /app && npm install
+RUN npm install
 
-#CMD npm start
-CMD tail -f `mktemp`
+CMD ["npm", "start"]
